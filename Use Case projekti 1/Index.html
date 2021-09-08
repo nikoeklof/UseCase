@@ -5,45 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Äänestyssovellus</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="headertitle">Äänestyssovellus</h1>
+    <div class="header">
+        <h1>Äänestyssovellus</h1>
+        <h4 id="loginstatus">Kirjautuneena: <span id="loggedAs">Käyttäjä</span></h4>
         <div class="header-links">
-            <a style="background-color: rgb(16, 38, 70);" href="Index.html">Etusivu</a>
-            <a href="login.html">Kirjaudu</a>
-            <a href="register.html">Rekisteröidy</a>
-            <a href="addPolls.html">Lisää äänestys</a>
-            <a href="removePolls.html">Poista äänestyksiä</a>
-        </div>
-    </header>
-    <section id="mainbox">
+            <button class="header-button" onclick="login()">Ylläpitäjille</button>
+            <button class="header-button" onclick="addPollScreen()">Lisää äänestys</button>
+            <button id="removePolls" class="header-button" onclick="removePolls()">Poista äänestys</button>
 
-        <div id="ongoingPolls">
-            <h2 id="pollheader">Käynnissä olevat äänestykset</h2>
-            <div class="polls">
-                <ul>
-                    <li><a href="http://">Paras ruoka</a> </li>
-                    <li><a href="http://">Paras Automerkki</a></li>
-                </ul>
+        </div>
+
+    </div>
+    <div class="pollContainer">
+        <h2>Äänestykset:</h2>
+        <div id="polls">
+
+
+        </div>
+
+    </div>
+    <div id="overlay">
+        <div id="login">
+            <h3>Anna käyttäjänimi:</h3>
+            <input id="loginName" type="text">
+            <h3>Anna salasana:</h3>
+            <input id="loginPassword" type="password">
+            <br>
+            <button class="header-button" onclick="validateLogin()">Kirjaudu</button>
+            <button class="header-button" onclick="closeWindow()">Peruuta</button>
+        </div>
+        <div id="addPoll">
+            <h3>Äänestyksen nimi:</h3>
+            <input type="text" name="Nimi..." id="addPollName">
+            <h4>Anna vaihtoehdot:</h4>
+            <div id="addpollChoices">
+                <input type="text" id="addPollChoice1">
             </div>
-
+            <br>
+            <button class="header-button" onclick="addChoice()">Lisää vaihtoehto</button>
+            <br>
+            <button class="header-button" onclick="addPoll()">Lisää äänestys</button>
+            <button class="header-button" onclick="closeWindow()">Peruuta</button>
         </div>
-        <div id="previousPolls">
-            <h2 id="pollheader">Päättyneet äänestykset</h2>
-            <div class="polls">
-                <ul>
-                    <li><a href="http://">Paras ruoka</a> </li>
-                    <li><a href="http://">Paras Automerkki</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
+    </div>
 
 </body>
 
