@@ -85,7 +85,7 @@ function voteChoice(pollID, choiceID) {
 }
 
 function removePoll(pollID, pollnumber) {
-    var removeconfirm = confirm('Poistetaanko varmasti Äänestys: ' + document.getElementById('poll' + pollnumber + 'question').innerHTML)
+    var removeconfirm = confirm('Poistetaanko varmasti äänestys nimeltä: ' + document.getElementById('poll' + pollnumber + 'question').innerHTML)
     if (removeconfirm == true) {
         let parent = document.getElementById('polls')
         parent.removeChild(pollID)
